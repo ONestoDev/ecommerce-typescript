@@ -1,0 +1,49 @@
+{
+  "name": "ecommerce-node-api",
+  "version": "1.0.0",
+  "description": "Estee é um projeto acadêmico para pratica de desenvolvimento de software mais especificamente a aplicação do paradigma orientado a objeto (POO) e seus conceitos, implementação de aplicaões WEB e APIs, integração com banco de dados, utilização de testes automatizados, tudo em conformmidade com principios e padrões de arquitetura e projeto, além de observância às boas práticas de desenvolvimento. Uso do ambiente de execução Node e linguagem de programação TypeScript.",
+  "keywords": [
+    "processo",
+    "de",
+    "desenvolvimento",
+    "de",
+    "software",
+    "aplicações",
+    "web",
+    "API",
+    "principios",
+    "e",
+    "padroes",
+    "de",
+    "arquitetura",
+    "principios",
+    "e",
+    "padroes",
+    "de",
+    "projeto",
+    "testes",
+    "automatizados",
+    "boas",
+    "práticas",
+    "typescript",
+    "node",
+    "academico",
+    "ifs",
+    "programacao",
+    "II",
+    "programacao",
+    "III"
+  ],
+  "license": "ISC",
+  "author": "Ernesto Silva",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "sucrase": "^3.35.1",
+    "typescript": "^6.0.3"
+  }
+}
