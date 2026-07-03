@@ -36,13 +36,12 @@
   ],
   "license": "ISC",
   "author": "Ernesto Silva",
-  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@types/node": "^26.0.0",
+    "@types/node": "^26.1.0",
     "sucrase": "^3.35.1",
     "typescript": "^6.0.3"
   }
