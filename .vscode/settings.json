@@ -3,5 +3,6 @@
     "code-runner.executorMap": {
         "javascript": "node",
         "typescript": "npx sucrase-node"
-    }
+    },
+    "js/ts.experimental.useTsgo": false
 }
