@@ -6,6 +6,8 @@
       "outDir": "./dist",
       "module": "commonjs",
       "target": "esnext",
+      "baseUrl": ".",
+      "ignoreDeprecations": "6.0",
       "types": ["node"],
       "sourceMap": true,
       "declaration": true,
@@ -14,8 +16,8 @@
       "exactOptionalPropertyTypes": true,
       "strictPropertyInitialization": false,
       "paths": {
-        "@modules/*": ["./modules/*"],
-        "@shared/*": ["./shared/*"]
+        "@modules/*": ["src/modules/*"],
+        "@shared/*": ["src/shared/*"]
       }
     },
     "include": ["src"],

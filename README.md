@@ -61,36 +61,38 @@ cd ecommerce-typescript
 npm install
 ```
 
+Se o PowerShell bloquear o comando `npm` na sua máquina, use `npm.cmd install` no Windows.
+
 ### Execute em modo de desenvolvimento
 
 ```bash
-npx sucrase-node src/index.ts
+npm run dev
 ```
 
 ### Compile o TypeScript
 
 ```bash
-npx tsc
+npm run build
 ```
 
 ### Execute a versão compilada
 
 ```bash
-node dist/index.js
+npm start
 ```
 
 ---
 
 ## 📌 Scripts recomendados
 
-Caso queira facilitar a execução do projeto, adicione os scripts abaixo no `package.json`:
+O projeto já expõe estes scripts no `package.json`:
 
 ```json
 "scripts": {
-  "dev": "sucrase-node src/index.ts",
-  "build": "tsc",
+  "dev": "node -r tsconfig-paths/register -r sucrase/register src/index.ts",
+  "build": "tsc -p tsconfig.json",
   "start": "node dist/index.js",
-  "watch": "tsc -w"
+  "dev:console": "node -r tsconfig-paths/register -r sucrase/register src/index.ts"
 }
 ```
 
