@@ -1,12 +1,9 @@
 import { faker } from "@faker-js/faker";
-import { beforeAll, describe, expect, test } from "vitest";
 import { CriarEnderecoProps, RecuperarEnderecoProps } from "./endereco.types";
 import { Endereco } from "./endereco.entity";
 import { EnderecoBairroNuloOuIndefinido, EnderecoBairroTamanhoMaximo, EnderecoBairroTamanhoMinimo, EnderecoCepFormatoInvalido, EnderecoCepNuloOuIndefinido, EnderecoCidadeNulaOuIndefinida, EnderecoEstadoNuloOuIndefinido, EnderecoRuaNulaOuIndefinida, EnderecoRuaTamanhoMaximo, EnderecoRuaTamanhoMinimo } from "./endereco.exception";
 import { IDEntityUUIDInvalido } from "../../../../shared/domain/domain.exception";
-
-
-
+import { beforeAll, describe, expect, test } from "vitest";
 
 let enderecoValido: CriarEnderecoProps;
 let UUIDValido: string;
