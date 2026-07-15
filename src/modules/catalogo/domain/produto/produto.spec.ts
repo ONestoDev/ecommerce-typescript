@@ -34,10 +34,10 @@ beforeAll(async() => {
     valorProdutoInvalido = faker.number.float({ min: -10000, max: 0.0 });
 
     //Preenchendo um array de categorias válidas com dados simulados
-    const categoriaValida01 = Categoria.criar({nome: faker.string.alpha({length: {min: 3, max: 50 }})});
-    const categoriaValida02 = Categoria.criar({nome: faker.string.alpha({length: {min: 3, max: 50 }})});
-    const categoriaValida03 = Categoria.criar({nome: faker.string.alpha({length: {min: 3, max: 50 }})});
-    const categoriaValida04 = Categoria.criar({nome: faker.string.alpha({length: {min: 3, max: 50 }})});
+    const categoriaValida01 = Categoria.criar({nome: faker.string.alpha({length: {min: 4, max: 50 }})});
+    const categoriaValida02 = Categoria.criar({nome: faker.string.alpha({length: {min: 4, max: 50 }})});
+    const categoriaValida03 = Categoria.criar({nome: faker.string.alpha({length: {min: 4, max: 50 }})});
+    const categoriaValida04 = Categoria.criar({nome: faker.string.alpha({length: {min: 4, max: 50 }})});
     categoriasValidas = faker.helpers.arrayElements<Categoria>([categoriaValida01, categoriaValida02, categoriaValida03], {min: 1, max: 3});
     categoriasQtdMinInvalidas = [];
     categoriasQtdMaxInvalidas = faker.helpers.arrayElements<Categoria>([categoriaValida01, categoriaValida02, categoriaValida03, categoriaValida04], {min: 4, max: 4});

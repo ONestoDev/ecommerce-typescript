@@ -14,8 +14,8 @@ let UUIDValido: string;
 beforeAll(async () => {
     // Configuração global para todos os testes
     // Por exemplo, você pode inicializar variáveis globais, configurar mocks, etc.
-    nomeCategoriaValido = faker.string.alpha({ length: { min: 3, max: 50 } });
-    nomeCategoriaTamanhoMinInvalido = faker.string.alpha({ length: { min: 0, max: 3 } });
+    nomeCategoriaValido = faker.string.alpha({ length: { min: 4, max: 50 } });
+    nomeCategoriaTamanhoMinInvalido = faker.string.alpha({ length: { min: 1, max: 3 } });
     nomeCategoriaTamanhoMaxInvalido = faker.string.alpha({ length: { min: 51, max: 51 } });
     UUIDInvalido = faker.string.alpha({ length: { min: 1, max: 20 } }); // Exemplo de UUID inválido
     UUIDValido = faker.string.uuid(); // Gera um UUID válido usando o faker
