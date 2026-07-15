@@ -1,14 +1,20 @@
-import { defineConfig } from 'vitest/config';
 import path from 'path';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  resolve: {
-    alias: {
-      '@modules': path.resolve(__dirname, './src/modules'),
-      '@shared': path.resolve(__dirname, './src/shared'),
-    },
-  },
-  test: {
+  test: { 
     globals: true,
   },
+  resolve: {
+    alias: [
+      {
+        find: "@modules",
+        replacement: path.resolve(__dirname, "src/modules"),
+      },
+      {
+        find: "@shared",
+        replacement: path.resolve(__dirname, "src/shared"),
+      },
+    ]
+  }
 });

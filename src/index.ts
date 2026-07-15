@@ -1,51 +1,49 @@
-import { Categoria } from "./modules/catalogo/domain/categoria/categoria.entity";
+import { PrismaClient } from "@prisma/client";
 import { DomainException } from "./shared/domain/domain.exception";
-import { RecuperarCategoriaProps } from "./modules/catalogo/domain/categoria/categoria.types";
-import { readFile, writeFile } from "fs";
-import { CategoriaMap } from "./modules/catalogo/mappers/categoria.map";
+import { Categoria } from "./modules/catalogo/domain/categoria/categoria.entity";
 
+const prisma = new PrismaClient();
 
-try {
-    //Criando uma categoria
+async function main() {
+    // Aqui você pode adicionar suas operações de banco de dados usando o Prisma Client
+    // Por exemplo, criar um novo usuário:
+    // const newUser = await prisma.user.create({
+    // data: {
+    // name: "John Doe",
+    // email: "
+
+    // Criar Categoria
+
     let categoria: Categoria;
-    categoria = Categoria.criar({nome: "Informática"});
-    console.log(categoria);
+    categoria = Categoria.criar({nome: "Eletrônicos"});
 
-    //Recuperando uma categoria
-
-    let propsCategoria: RecuperarCategoriaProps = {
-        id: "e9d35e7e-9141-458f-b457-837e56a8eb02", 
-        nome: "Automóveis"
-    };
-    let categoria2: Categoria = Categoria.recuperar(propsCategoria);
-    console.log(categoria2);
-
-    //Persistindo e Recuperando a categoria em um arquivo JSON - File System
-
-    let arrayCategorias = [];
-    arrayCategorias.push(categoria.toDTO());
-    arrayCategorias.push(categoria2.toDTO());
-    
-    writeFile('categoria.json', JSON.stringify(arrayCategorias), function (error:any) {
-        if (error) throw error;
-        console.log('Arquivo salvo com sucesso!');
-        readFile('categoria.json', (error, dadoGravadoArquivo) => {
-            if (error) throw error;
-            console.log('Leitura de Arquivo!');
-            let categoriasSalvas: [] = JSON.parse(dadoGravadoArquivo.toString());
-            categoriasSalvas.forEach(categoriaJSON => {
-                console.log(categoriaJSON);
-                console.log(CategoriaMap.toDomain(categoriaJSON));
-            })
-        });
+    // Persistir Categoria no banco de dados
+    await prisma.categoria.create({
+        data: {
+            id: categoria.id,
+            nome: categoria.nome,
+        },
     });
 
-} 
-catch (error: any) {
-    if (error instanceof DomainException) {
-    console.log(error.message);
-    }
+    // Listar Categorias
+
+    const ListaCategorias = await prisma.categoria.findMany();
+    console.log(ListaCategorias);
 }
-finally {
-    console.log("A ação deve ser executada em caso de sucesso ou falha");
-}
+main()
+    .then(async () => {
+        await prisma.$disconnect();
+    })
+    .catch(async (error) => {
+        if (error instanceof DomainException) {
+            console.log("Exceção de Domínio");
+            console.log(error.message);
+        }
+        else {
+            console.log("Outras Exceções");
+            console.log(error.message);
+        }
+        await prisma.$disconnect();
+        process.exit(1);
+    });
+

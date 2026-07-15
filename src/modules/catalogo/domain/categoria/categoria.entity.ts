@@ -4,7 +4,6 @@ import { randomUUID } from "crypto";
 import { Entity } from "../../../../shared/domain/entity";
 import { CategoriaMap } from "../../mappers/categoria.map";
 
-
 class Categoria extends Entity<Categoria> implements ICategoria {
 
 //Atributos de Classe//

@@ -135,7 +135,7 @@ Durante o desenvolvimento deste projeto foram trabalhados conceitos como:
 * [x] Configuração inicial do projeto
 * [x] Configuração do TypeScript
 * [x] Estrutura base da API
-* [ ] Criar módulo de produtos
+* [x] Criar módulo de produtos
 * [ ] Criar módulo de clientes
 * [ ] Criar módulo de pedidos
 * [ ] Criar módulo de pagamentos
